@@ -1,0 +1,16 @@
+.main {
+  margin-top: 65px;
+  padding: 0 25px;
+  /* background: url('/img/undraw_fast_car_p-4-cu.svg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+  /* background-image: url('/img/bg-circuit.svg'); */
+}
+@media screen and (min-width: 768px) {
+  .main {
+    margin-left: 70px;
+    position: relative;
+    height: calc(100vh - 80px);
+  }
+}

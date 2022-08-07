@@ -1,0 +1,114 @@
+<!--========== NAV ==========-->
+<div class='nav' id='navbar'>
+  <div class='nav__container'>
+    <div>
+      <a href='/inicio' class='nav__link nav__logo'>
+        <i class='bx bxs-disc nav__icon'></i>
+        <span class='nav__logo-name'>MazArepas</span>
+      </a>
+
+      <div class='nav__list'>
+        {{! <div class="nav__items">
+          <h3 class="nav__subtitle">Profile</h3>
+
+          <a href="#" class="nav__link active_link">
+            <i class="bx bx-home nav__icon"></i>
+            <span class="nav__name">Home</span>
+          </a>
+
+          <div class="nav__dropdown">
+            <a href="#" class="nav__link">
+              <i class="bx bx-user nav__icon"></i>
+              <span class="nav__name">Profile</span>
+              <i class="bx bx-chevron-down nav__icon nav__dropdown-icon"></i>
+            </a>
+
+            <div class="nav__dropdown-collapse">
+              <div class="nav__dropdown-content">
+                <a href="#" class="nav__dropdown-item">Passwords</a>
+                <a href="#" class="nav__dropdown-item">Mail</a>
+                <a href="#" class="nav__dropdown-item">Accounts</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="nav__link">
+            <i class="bx bx-message-rounded nav__icon"></i>
+            <span class="nav__name">Messages</span>
+          </a>
+        </div> }}
+
+        <div class='nav__items'>
+          <h3 class='nav__subtitle'>Menu</h3>
+          <div class='nav__dropdown'>
+            <a href='#' class='nav__link'>
+              <i class='bx bx-bell nav__icon'></i>
+              <span class='nav__name'>Usuarios</span>
+              <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+            </a>
+
+            <div class='nav__dropdown-collapse'>
+              <div class='nav__dropdown-content'>
+                <a href='#' class='nav__dropdown-item'>Registrar</a>
+                <a href='#' class='nav__dropdown-item'>Actualizar</a>
+              </div>
+            </div>
+          </div>
+          {{#if (isAdministradorReporting user.rpermiso.PER_CNIVEL)}}
+            <a href='/colpatria/cargueMasivo' class='nav__link'>
+              <i class='bx bx-send nav__icon'></i>
+              <span class='nav__name'>Cargue Masivo</span>
+            </a>
+          {{/if}}
+          {{#if (isAdministradorSupervisor user.rpermiso.PER_CNIVEL)}}
+            <div class='nav__dropdown'>
+              <a href='#' class='nav__link'>
+                <i class='bx bx-network-chart nav__icon'></i>
+                <span class='nav__name'> Informes</span>
+                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+              </a>
+              <div class='nav__dropdown-collapse'>
+                <div class='nav__dropdown-content'>
+                  <a href='/colpatria/viewInforme' class='nav__dropdown-item'>Informe Seguros</a>
+                </div>
+              </div>
+            </div>
+          {{/if}}
+          {{#if (isAdministradorAsesor user.rpermiso.PER_CNIVEL)}}
+            <a href='/colpatria/formGestion' class='nav__link'>
+              <i class='bx bx-notepad nav__icon'></i>
+              <span class='nav__name'>Formulario</span>
+            </a>
+
+            <a href='/colpatria/getVentasDevueltas' class='nav__link'>
+              <i id='iconVentasDevueltas' class='bx bx-repost nav__icon'></i>
+              <span class='nav__name'> Ventas devueltas</span><span id='badgeVentasDevueltas' class='new badge #ef5350 red lighten-1 displayNone'>4</span>
+            </a>
+
+            <a href='/colpatria/formReferidos' class='nav__link'>
+              <i class='bx bx-group nav__icon'></i>
+              <span class='nav__name'>Referidos</span>
+            </a>
+          {{/if}}
+
+          {{! Back }}
+          {{#if (isAdministradorBackOffice user.rpermiso.PER_CNIVEL)}}
+            <a href='/colpatria/ventas' class='nav__link'>
+              <i class='bx bxs-car-garage nav__icon'></i>
+              <span class='nav__name'>Ventas</span>
+            </a>
+            <a href='/colpatria/viewVentasPorGestionar' class='nav__link'>
+              <i class='bx bx-list-minus nav__icon'></i>
+              <span class='nav__name'>Lista Ventas</span>
+            </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+
+    <a href='/logout' class='nav__link nav__logout'>
+      <i class='bx bx-log-out nav__icon'></i>
+      <span class='nav__name'>Cerrar Sesion</span>
+    </a>
+  </div>
+</div>

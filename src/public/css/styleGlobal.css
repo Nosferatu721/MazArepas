@@ -1,0 +1,18 @@
+body {
+  overflow-x: hidden;
+}
+.displayNone {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
+.containersito {
+  margin: 2rem 4rem;
+}
+.centerTopDataTable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
