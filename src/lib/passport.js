@@ -16,7 +16,8 @@ passport.use(
         user = result[0]
       if (result.length) {
         if (result[0].USR_Password === password) {
-          return done(null, user, req.flash("messageSuccess", `Bienvenido ${user.USR_PrimerNombre} ${user.USR_PrimerApellido}`));
+          req.flash("messageSuccess", `Bienvenido ${user.USR_PrimerNombre} ${user.USR_PrimerApellido}`)
+          return done(null, user);
         } else {
           return done(null, false, req.flash("messageInfo", "Contraseña Incorrecta 😐"));
         }
