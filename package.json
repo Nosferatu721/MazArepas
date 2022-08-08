@@ -11,30 +11,27 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "activedirectory2": "^2.1.0",
-    "boxicons": "^2.0.9",
-    "chart.js": "^3.5.1",
+    "boxicons": "^2.1.2",
+    "chart.js": "^3.9.1",
     "connect-flash": "^0.1.1",
-    "datatables.net-bs4": "^1.11.3",
-    "date-format": "^3.0.0",
-    "dateformat": "^5.0.2",
+    "datatables.net-bs4": "^1.12.1",
     "exceljs": "^4.3.0",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.1",
-    "express-handlebars": "^5.3.2",
-    "express-mysql-session": "^2.1.6",
-    "express-session": "^1.17.2",
-    "express-validator": "^6.12.0",
-    "materialize-css": "^1.0.0-rc.2",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "express-handlebars": "^6.0.6",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "materialize-css": "^1.0.0",
     "morgan": "^1.10.0",
-    "mysql2": "^2.2.5",
-    "nodemailer": "^6.7.2",
-    "passport": "^0.4.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.7",
+    "passport": "^0.6.0",
     "passport-local": "^1.0.0",
-    "sweetalert2": "^11.1.4"
+    "sweetalert2": "^11.4.26",
+    "colors": "^1.4.0"
   },
   "devDependencies": {
-    "colors": "^1.4.0",
-    "nodemon": "^2.0.10"
+    "nodemon": "^2.0.19"
   }
 }
