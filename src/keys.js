@@ -6,9 +6,9 @@ module.exports = {
   //   database: 'db_mazarepas'
   // }
   database: {
-    host: 'c9aonqzlijdb.us-east-4.psdb.cloud',
-    user: 'rik9zhm7vecp',
-    password: 'pscale_pw_ha0WrylbmlyWKNJgndiZ1SWxsvfDqZY-xSEKsj5ha_Q',
+    host: 'us-cdbr-east-06.cleardb.net',
+    user: 'b22c7823af884a',
+    password: 'b8e6d076',
     database: 'db_mazarepas'
   }
 }

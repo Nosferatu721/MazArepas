@@ -2,9 +2,13 @@ const mysql = require('mysql2');
 const { database } = require('./keys');
 // require("dotenv").config();
 
-const DATABASE_URL = 'mysql://9zzzfpheyhnq:pscale_pw_mBAGTdBv3myDka4n3l4JugO1nIDLE2uHi6klW_gd8w0@c9aonqzlijdb.us-east-4.psdb.cloud/db_mazarepas?ssl={"rejectUnauthorized":true}';
-
-let conn = mysql.createConnection(DATABASE_URL);
+let conn = mysql.createConnection({
+  host: database.host,
+  user: database.user,
+  password: database.password,
+  database: database.database,
+  dateStrings: true,
+});
 
 // * Valida si se desconecta Node y DB
 // conn.end();
