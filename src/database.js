@@ -25,7 +25,7 @@ try {
         console.log('Todo Correcto');
       })
       .catch((err) => console.log('ERROR::', err));
-  }, 60000);
+  }, 10000);
 } catch (error) {
   if (error) {
     let posicion = error.message.indexOf("Can't add new command when connection is in closed state");
