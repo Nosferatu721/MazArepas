@@ -8,7 +8,7 @@ module.exports = {
   database: {
     host: 'us-cdbr-east-06.cleardb.net',
     user: 'b22c7823af884a',
-    password: 'b8e6d076',
+    password: '2ebf2e6aa549e33',
     database: 'heroku_91ee2ec23ee0fc4'
   }
 }

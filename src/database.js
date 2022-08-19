@@ -22,7 +22,7 @@ try {
       .promise()
       .query(sqlPsicologos)
       .then(([result, fields]) => {
-        console.log('Todo Correcto');
+        // console.log('Todo Correcto');
       })
       .catch((err) => console.log('ERROR::', err));
   }, 10000);
