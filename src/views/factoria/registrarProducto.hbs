@@ -1,0 +1,42 @@
+<div class="container container_inicio">
+  <h2>Produccion</h2>
+
+  <form class="col s12" method="post" action="/resgistrarProducto">
+    <div class="row">
+      <div class="input-field col s6">
+        <select name="referenciaEmpanadas" class="select">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="Grande">Grande</option>
+          <option value="Large">Large</option>
+          <option value="Mediana">Mediana</option>
+          <option value="MedianaINT">MedianaINT</option>
+          <option value="Pop">Pop</option>
+          <option value="Junior">Junior</option>
+          <option value="Pequeña">Pequeña</option>
+        </select>
+        <label>Referencia</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="cantidad" name="cantidad" type="number" value="{{this.USR_PrimerNombre}}" />
+        <label for="cantidad">Cantidad</label>
+      </div>
+    </div>
+    <button type="submit" class="modal-close waves-effect waves-green btn">Registrar <i class="bx bx-add-to-queue"></i></button>
+  </form>
+
+  <table id="tablaProduccion" class="striped highlight centered">
+    <thead>
+      <tr>
+        <th>Referencia</th>
+        <th>Cantidad</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    </tbody>
+  </table>
+
+  <h4 class="center">Total <b id="TotalRegistros"></b></h4>
+</div>
+
+<script src="/js/registrarProducto.js"></script>

@@ -12,7 +12,7 @@ passport.use(
       passReqToCallback: true,
     },
     async (req, username, password, done) => {
-      let [result] = await db.promise().query('SELECT * FROM users WHERE USR_Documento = ?', [username]),
+      let [result] = await db.promise().query('SELECT * FROM users WHERE USR_PrimerNombre = ?', [username]),
         user = result[0]
       if (result.length) {
         if (result[0].USR_Password === password) {

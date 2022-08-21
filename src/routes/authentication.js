@@ -11,7 +11,7 @@ router.post('/registro', (req, res) => {
 });
 
 router.get('/login', isNotLoggedIn, (req, res) => {
-  res.render('auth/login', { title: 'MazArepas', noMaterialize: true });
+  res.render('auth/login', { title: 'Login', noMaterialize: true });
 });
 
 router.post('/login', (req, res, next) => {

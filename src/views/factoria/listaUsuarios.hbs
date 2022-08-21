@@ -1,0 +1,47 @@
+<div class="container container_inicio">
+  <h2>Usuarios</h2>
+
+  <hr />
+
+  <table class="striped highlight centered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Contraseña</th>
+        <th>Rol</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each resultSelect}}
+        <tr>
+          <td>{{this.USR_PrimerNombre}}</td>
+          <td>{{this.USR_Password}}<a class="waves-effect waves-light btn modal-trigger" href="#modal{{this.USR_ID}}" style="float: right;"><i class="bx bx-edit-alt"></i></a></td>
+          <td>{{this.USR_Rol}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <div class="modals">
+    {{#each resultSelect}}
+      <div id="modal{{this.USR_ID}}" class="modal">
+        <div class="modal-content">
+          <form class="col s12" method="post" action="/actualizar/{{this.USR_ID}}">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="nombre" name="nombre" type="text" value="{{this.USR_PrimerNombre}}" class="validate" />
+                <label for="nombre">Nombre</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="contrasena" name="contrasena" type="text" value="{{this.USR_Password}}" class="validate" />
+                <label for="contrasena">Contraseña</label>
+              </div>
+            </div>
+            <button type="submit" class="modal-close waves-effect waves-green btn">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

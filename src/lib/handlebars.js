@@ -1,29 +1,13 @@
 const Handlebars = require("handlebars");
 
-Handlebars.registerHelper("isAdministradorSupervisor", (value) => {
-	return value === "Administrador" || value === "Supervisor" || value === 'Reporting';
+Handlebars.registerHelper("isAdminSupervisor", (value) => {
+	return value === "Admin" || value === "Supervisor";
 });
 
-Handlebars.registerHelper("isAdministradorAsesor", (value) => {
-	return value === "Administrador" || value === "Asesor";
+Handlebars.registerHelper("isAdminProduccion", (value) => {
+	return value === "Admin" || value === "Produccion";
 });
 
-Handlebars.registerHelper("isAdministradorReporting", (value) => {
-	return value === "Administrador" || value === "Reporting";
-});
-
-Handlebars.registerHelper("isAdministradorBackOffice", (value) => {
-	return value === "Administrador" || value === "BackOffice";
-});
-
-Handlebars.registerHelper("isAseguradoYTomador", (value) => {
-	return value === "SI";
-});
-
-Handlebars.registerHelper("isBeneficiarioYAsegurado", (value) => {
-	return value === "SI";
-});
-
-Handlebars.registerHelper("isONEROSO", (value) => {
-	return value === "ONEROSO";
+Handlebars.registerHelper("isAdminInventario", (value) => {
+	return value === "Admin" || value === "Inventario";
 });

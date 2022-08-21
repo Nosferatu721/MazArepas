@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // * Materialize
-  // window.elemsModal = document.querySelectorAll(".modal");
-  // M.Modal.init(elemsModal);
+  window.elemsModal = document.querySelectorAll(".modal");
+  M.Modal.init(elemsModal);
   var elemsSelect = document.querySelectorAll('.select');
   M.FormSelect.init(elemsSelect);
   // * Maximo Caracteres Inputs Materialize
