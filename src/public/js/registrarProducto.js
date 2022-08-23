@@ -1,7 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // * Validar Formularios
+  const referenciaEmpanadas = document.getElementById('referenciaEmpanadas'),
+    cantidadEmpanada = document.getElementById('cantidadEmpanada'),
+    btnRegistrarEmpanadas = document.getElementById('btnRegistrarEmpanadas'),
+    referenciaPizza = document.getElementById('referenciaPizza'),
+    cantidadPizza = document.getElementById('cantidadPizza'),
+    btnRegistrarPizzas = document.getElementById('btnRegistrarPizzas');
+
+  btnRegistrarEmpanadas.addEventListener('click', (e) => {
+    if (referenciaEmpanadas.value === '' || cantidadEmpanada.value === '') e.preventDefault();
+    if (referenciaEmpanadas.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Referencia 😑' });
+    if (cantidadEmpanada.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Cantidad 😑' });
+  });
+  btnRegistrarPizzas.addEventListener('click', (e) => {
+    if (referenciaPizza.value === '' || cantidadPizza.value === '') e.preventDefault();
+    if (referenciaPizza.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Referencia 😑' });
+    if (cantidadPizza.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Cantidad 😑' });
+  });
+
+  // * Mostrar Registros del dia de hoy
   const tablaProduccionBody = document.querySelector('#tablaProduccion tbody'),
     TotalRegistros = document.getElementById('TotalRegistros');
-
   getData('/registrosProductosHoy').then((res) => {
     let objProductos = {},
       htmlTR = '',
@@ -35,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const containerTableFilter = document.getElementById('containerTableFilter'),
     btnFiltro = document.getElementById('btnFiltro'),
     fechaInput = document.getElementById('fechaInput');
-
   btnFiltro.addEventListener('click', async () => {
     let res = await postData('/getForDate', { fecha: fechaInput.value });
     if (res.length === 0) {
@@ -43,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon: 'info',
         title: 'No hay registros en esta fecha 😢',
       });
-      return
+      return;
     }
 
     let objProductos = {},

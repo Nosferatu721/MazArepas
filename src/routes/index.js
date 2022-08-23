@@ -60,7 +60,6 @@ router.post('/resgistrarProductoPizza', async (req, res) => {
 router.get('/registrosProductosHoy', async (req, res) => {
   let FechaHoy = new Date();
   let FormatFechaHoy = FechaHoy.toISOString().split('T')[0];
-  console.log(FormatFechaHoy);
 
   const sqlSelect = `SELECT * FROM produccion WHERE DATE(PRO_Created_at) = ?`;
   let [resultSelect] = await db.promise().query(sqlSelect, [FormatFechaHoy]);
