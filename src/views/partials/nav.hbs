@@ -44,7 +44,7 @@
           {{! Supervisor }}
           {{#if (isAdminSupervisor user.USR_Rol)}}
             <a href="/listaUsuarios" class="nav__link">
-              <i class="bx bx-bell nav__icon"></i>
+            <i class='bx bxs-user-detail nav__icon'></i>
               <span class="nav__name">Usuarios</span>
             </a>
           {{/if}}
@@ -52,7 +52,7 @@
           {{! Produccion }}
           {{#if (isAdminProduccion user.USR_Rol)}}
             <a href="/resgistrarProducto" class="nav__link">
-              <i class="bx bx-message-rounded nav__icon"></i>
+            <i class='bx bx-doughnut-chart nav__icon'></i>
               <span class="nav__name">Produccion</span>
             </a>
           {{/if}}
@@ -60,7 +60,7 @@
           {{! Inventario }}
           {{#if (isAdminInventario user.USR_Rol)}}
             <a href="#" class="nav__link">
-              <i class="bx bx-message-rounded nav__icon"></i>
+              <i class='bx bxs-book-content nav__icon'></i>
               <span class="nav__name">Inventario</span>
             </a>
           {{/if}}

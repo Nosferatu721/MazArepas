@@ -1,42 +1,99 @@
-<div class="container container_inicio">
-  <h2>Produccion</h2>
+<div class='container container_inicio'>
+  <h2 class='center'>Produccion</h2>
 
-  <form class="col s12" method="post" action="/resgistrarProducto">
-    <div class="row">
-      <div class="input-field col s6">
-        <select name="referenciaEmpanadas" class="select">
-          <option value="" disabled selected>Choose your option</option>
-          <option value="Grande">Grande</option>
-          <option value="Large">Large</option>
-          <option value="Mediana">Mediana</option>
-          <option value="MedianaINT">MedianaINT</option>
-          <option value="Pop">Pop</option>
-          <option value="Junior">Junior</option>
-          <option value="Pequeña">Pequeña</option>
-        </select>
-        <label>Referencia</label>
+  <ul class='collapsible'>
+    <li>
+      <div class='collapsible-header'><i class='bx bxs-baguette'></i>Empanadas</div>
+      <div class='collapsible-body'>
+        <form class='col s12' method='post' action='/resgistrarProductoEmpanadas'>
+          <div class='row'>
+            <div class='input-field col s12 m6'>
+              <select name='referenciaEmpanadas' class='select'>
+                <option value='' disabled selected>Categoria</option>
+                <option value='Grande'>Grande</option>
+                <option value='Large'>Large</option>
+                <option value='Mediana'>Mediana</option>
+                <option value='MedianaINT'>MedianaINT</option>
+                <option value='Pop'>Pop</option>
+                <option value='Junior'>Junior</option>
+                <option value='Pequeña'>Pequeña</option>
+                <option value='Hojaldre'>Hojaldre</option>
+              </select>
+              <label>Referencia</label>
+            </div>
+            <div class='input-field col s12 m6'>
+              <input id='cantidadEmpanada' name='cantidadEmpanada' type='number' />
+              <label for='cantidadEmpanada'>Cantidad</label>
+            </div>
+          </div>
+          <div class='center'>
+            <button type='submit' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button>
+          </div>
+        </form>
       </div>
-      <div class="input-field col s6">
-        <input id="cantidad" name="cantidad" type="number" value="{{this.USR_PrimerNombre}}" />
-        <label for="cantidad">Cantidad</label>
+    </li>
+    <li>
+      <div class='collapsible-header'><i class='bx bxs-pizza'></i>Pizzas</div>
+      <div class='collapsible-body'>
+        <form class='col s12' method='post' action='/resgistrarProductoPizza'>
+          <div class='row'>
+            <div class='input-field col s12 m6'>
+              <select name='referenciaPizza' class='select'>
+                <option value='' disabled selected>Categoria</option>
+                <option value='Pizza'>Pizza</option>
+                <option value='Pizza20'>Pizza20</option>
+                <option value='Pizza25'>Pizza25</option>
+                <option value='PizzaINT20'>PizzaINT20</option>
+                <option value='PizzaINT25'>PizzaINT25</option>
+              </select>
+              <label>Referencia</label>
+            </div>
+            <div class='input-field col s12 m6'>
+              <input id='cantidadPizza' name='cantidadPizza' type='number' />
+              <label for='cantidadPizza'>Cantidad</label>
+            </div>
+          </div>
+          <div class='center'>
+            <button type='submit' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button>
+          </div>
+        </form>
       </div>
-    </div>
-    <button type="submit" class="modal-close waves-effect waves-green btn">Registrar <i class="bx bx-add-to-queue"></i></button>
-  </form>
+    </li>
+    <li>
+      <div class='collapsible-header'><i class='bx bx-list-check'></i>Registros Hoy</div>
+      <div class='collapsible-body'>
+        <table id='tablaProduccion' class='striped highlight centered'>
+          <thead>
+            <tr>
+              <th>Referencia</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
 
-  <table id="tablaProduccion" class="striped highlight centered">
-    <thead>
-      <tr>
-        <th>Referencia</th>
-        <th>Cantidad</th>
-      </tr>
-    </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <h4 class='center'>Total <b id='TotalRegistros'></b></h4>
+      </div>
+    </li>
+    <li>
+      <div class='collapsible-header'><i class='bx bx-filter-alt'></i>Filtro</div>
+      <div class='collapsible-body'>
+        <h4 class='center'>Filtro</h4>
+        <div class='row'>
+          <div class='col s12 m4 offset-m4'>
+            <input type='text' id="fechaInput" class='datepicker' />
+          </div>
+        </div>
+        <div class='center'>
+          <a id="btnFiltro" class='waves-effect waves-light btn yellow lighten-1 dark-text '>button</a>
+        </div>
+        <div id="containerTableFilter" style="margin-top: 10px;">
 
-    <tbody>
-    </tbody>
-  </table>
-
-  <h4 class="center">Total <b id="TotalRegistros"></b></h4>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
 
-<script src="/js/registrarProducto.js"></script>
+<script src='/js/registrarProducto.js'></script>

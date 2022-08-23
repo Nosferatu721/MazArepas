@@ -78,9 +78,7 @@ img {
 }
 
 .header__img {
-  width: 35px;
   height: 35px;
-  border-radius: 50%;
 }
 
 .header__logo {
@@ -277,8 +275,6 @@ img {
     display: block;
   }
   .header__img {
-    width: 40px;
-    height: 40px;
     order: 1;
   }
   .nav {
