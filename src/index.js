@@ -78,6 +78,7 @@ app.use(require('./routes/authentication'));
 app.use(require('./routes'));
 app.use(isLoggedIn); // No entrar a las rutas sin logearse, redirecciona al Login
 app.use(require('./routes/user'));
+app.use(require('./routes/factoria'));
 
 // * Starting Server
 app.listen(app.get('PORT'), () => {
