@@ -5,7 +5,7 @@
     <li>
       <div class='collapsible-header'><i class='bx bxs-baguette'></i>Empanadas</div>
       <div class='collapsible-body'>
-        <form class='col s12' method='post' action='/resgistrarProductoEmpanadas'>
+        <form class='col s12' method='post' action='/resgistrarProduccionEmpanadas'>
           <div class='row'>
             <div class='input-field col s12 m6'>
               <select id='referenciaEmpanadas' name='referenciaEmpanadas' class='select'>
@@ -36,16 +36,20 @@
     <li>
       <div class='collapsible-header'><i class='bx bxs-pizza'></i>Pizzas</div>
       <div class='collapsible-body'>
-        <form class='col s12' method='post' action='/resgistrarProductoPizza'>
+        <form class='col s12' method='post' action='/resgistrarProduccionPizza'>
           <div class='row'>
             <div class='input-field col s12 m6'>
               <select id='referenciaPizza' name='referenciaPizza' class='select'>
                 <option value='' disabled selected>Categoria</option>
                 <option value='Pizza'>Pizza</option>
-                <option value='Pizza20'>Pizza20</option>
-                <option value='Pizza25'>Pizza25</option>
-                <option value='PizzaINT20'>PizzaINT20</option>
-                <option value='PizzaINT25'>PizzaINT25</option>
+                <option value='P2'>P2</option>
+                <option value='P5'>P5</option>
+                <option value='P2INT'>P2INT</option>
+                <option value='P5INT'>P5INT</option>
+                <option value='S2'>S2</option>
+                <option value='S5'>S5</option>
+                <option value='Q2'>Q2</option>
+                <option value='Q5'>Q5</option>
               </select>
               <label>Referencia</label>
             </div>
@@ -75,7 +79,7 @@
           <tbody>
           </tbody>
         </table>
-        <h4 class='center'>Total <b id='TotalRegistros'></b></h4>
+        <h4 class='center'>Total <b id='TotalRegistrosProduccion'></b> - Total Pizza <b id='TotalRegistrosProPizza'></b></h4>
       </div>
     </li>
     <li>
@@ -98,4 +102,4 @@
   </ul>
 </div>
 
-<script src='/js/registrarProducto.js'></script>
+<script src='/js/registrarProduccion.js'></script>

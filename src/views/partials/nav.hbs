@@ -51,7 +51,7 @@
 
           {{! Produccion }}
           {{#if (isAdminProduccion user.USR_Rol)}}
-            <a href="/resgistrarProducto" class="nav__link">
+            <a href="/resgistrarProduccion" class="nav__link">
             <i class='bx bx-doughnut-chart nav__icon'></i>
               <span class="nav__name">Produccion</span>
             </a>
@@ -59,7 +59,7 @@
 
           {{! Inventario }}
           {{#if (isAdminInventario user.USR_Rol)}}
-            <a href="#" class="nav__link">
+            <a href="/resgistrarProduccionInv" class="nav__link">
               <i class='bx bxs-book-content nav__icon'></i>
               <span class="nav__name">Inventario</span>
             </a>

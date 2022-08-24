@@ -20,11 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // * Mostrar Registros del dia de hoy
   const tablaProduccionBody = document.querySelector('#tablaProduccion tbody'),
-    TotalRegistros = document.getElementById('TotalRegistros');
-  getData('/registrosProductosHoy').then((res) => {
+    TotalRegistrosProduccion = document.getElementById('TotalRegistrosProduccion'),
+    TotalRegistrosProPizza = document.getElementById('TotalRegistrosProPizza');
+  getData('/registrosProduccionHoy').then((res) => {
     let objProductos = {},
       htmlTR = '',
-      suma = 0;
+      sumaTotal = 0,
+      sumaPizza = 0;
     res.forEach((producto) => {
       if (objProductos[`${producto.PRO_Referencia}`]) {
         let suma = (objProductos[`${producto.PRO_Referencia}`] += producto.PRO_Cantidad);
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let claves = Object.keys(objProductos);
     for (let i = 0; i < claves.length; i++) {
-      suma += objProductos[claves[i]];
+      claves[i] !== 'Pizza' ? (sumaTotal += objProductos[claves[i]]) : (sumaPizza += objProductos[claves[i]]);
       htmlTR += `
           <tr>
             <td>${claves[i]}</td>
@@ -45,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    TotalRegistros.innerHTML = suma;
+    TotalRegistrosProduccion.innerHTML = sumaTotal;
+    TotalRegistrosProPizza.innerHTML = sumaPizza;
 
     tablaProduccionBody.innerHTML = htmlTR;
   });
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnFiltro = document.getElementById('btnFiltro'),
     fechaInput = document.getElementById('fechaInput');
   btnFiltro.addEventListener('click', async () => {
-    let res = await postData('/getForDate', { fecha: fechaInput.value });
+    let res = await postData('/getForDateProduccion', { fecha: fechaInput.value });
     if (res.length === 0) {
       Toast.fire({
         icon: 'info',
