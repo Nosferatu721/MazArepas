@@ -212,3 +212,73 @@ button {
 thead {
   background: linear-gradient(60deg, #ffc40036, #ffee0070);
 }
+
+/* * Botones Nuevos */
+.btnCss {
+  position: relative;
+  background: #444;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+.btnCss:hover {
+  letter-spacing: 0.15em;
+  background: var(--clr);
+  color: var(--clr);
+  box-shadow: 0 0 35px var(--clr);
+  cursor: pointer;
+}
+.btnCss::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+.btnCss span {
+  position: relative;
+  z-index: 1;
+}
+.btnCss i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.btnCss i::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -4px;
+  left: 100%;
+  transform: translateX(-50%);
+  background: #27282c;
+  border: 2px solid var(--clr);
+  transition: 0.5s;
+}
+.btnCss:hover > i::before {
+  left: 0%;
+  transform: translateX(-50%) rotate(45deg);
+  box-shadow: 32px 32px var(--clr);
+}
+.btnCss > i::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -4px;
+  left: 0;
+  transform: translateX(-50%);
+  background: #27282c;
+  border: 2px solid var(--clr);
+  transition: 0.5s;
+}
+.btnCss:hover > i::after {
+  left: 100%;
+  transform: translateX(-50%) rotate(-45deg);
+  box-shadow: 32px -32px var(--clr);
+}

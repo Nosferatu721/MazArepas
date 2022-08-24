@@ -8,7 +8,7 @@
         <form class='col s12' method='post' action='/resgistrarProductoEmpanadas'>
           <div class='row'>
             <div class='input-field col s12 m6'>
-              <select id="referenciaEmpanadas" name='referenciaEmpanadas' class='select'>
+              <select id='referenciaEmpanadas' name='referenciaEmpanadas' class='select'>
                 <option value='' disabled selected>Categoria</option>
                 <option value='Grande'>Grande</option>
                 <option value='Large'>Large</option>
@@ -27,7 +27,8 @@
             </div>
           </div>
           <div class='center'>
-            <button type='submit' id="btnRegistrarEmpanadas" class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button>
+            <button class='btnCss' id='btnRegistrarEmpanadas' style='--clr:#1e9bff'><span>Registrar</span><i></i></button>
+            {{! <button type='submit' id='btnRegistrarEmpanadas' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button> }}
           </div>
         </form>
       </div>
@@ -38,7 +39,7 @@
         <form class='col s12' method='post' action='/resgistrarProductoPizza'>
           <div class='row'>
             <div class='input-field col s12 m6'>
-              <select id="referenciaPizza" name='referenciaPizza' class='select'>
+              <select id='referenciaPizza' name='referenciaPizza' class='select'>
                 <option value='' disabled selected>Categoria</option>
                 <option value='Pizza'>Pizza</option>
                 <option value='Pizza20'>Pizza20</option>
@@ -54,7 +55,8 @@
             </div>
           </div>
           <div class='center'>
-            <button type='submit' id="btnRegistrarPizzas" class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button>
+            <button class='btnCss' id='btnRegistrarPizzas' style='--clr:#ff1867'><span>Registrar</span><i></i></button>
+            {{!-- <button type='submit' id='btnRegistrarPizzas' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button> --}}
           </div>
         </form>
       </div>
@@ -82,13 +84,13 @@
         <h4 class='center'>Filtro</h4>
         <div class='row'>
           <div class='col s12 m4 offset-m4'>
-            <input type='text' id="fechaInput" class='datepicker' />
+            <input type='text' id='fechaInput' class='datepicker' />
           </div>
         </div>
         <div class='center'>
-          <a id="btnFiltro" class='waves-effect waves-light btn yellow lighten-1 dark-text '>button</a>
+          <a id='btnFiltro' class='waves-effect waves-light btn yellow lighten-1 dark-text'>button</a>
         </div>
-        <div id="containerTableFilter" style="margin-top: 10px;">
+        <div id='containerTableFilter' style='margin-top: 10px;'>
 
         </div>
       </div>
