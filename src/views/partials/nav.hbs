@@ -65,6 +65,14 @@
             </a>
           {{/if}}
 
+          {{! Inventario }}
+          {{#if (isAdminInventario user.USR_Rol)}}
+            <a href="/viewGerente" class="nav__link">
+              <i class='bx bxl-deezer nav__icon'></i>
+              <span class="nav__name">Gerente</span>
+            </a>
+          {{/if}}
+
         </div>
       </div>
     </div>

@@ -1,11 +1,13 @@
 <div class='container container_inicio'>
+  <div id="output"></div>
+  <a id="aImg" href="" download="Img1.png">IMG</a>
   <h2 class='center'>Inventario</h2>
   <ul class='collapsible'>
     <li>
-      <div class='collapsible-header'><i class='bx bx-book-content'></i>Invetario</div>
+      <div class='collapsible-header'><i class='bx bx-book-content'></i>Invetario Empanadas</div>
       <div class='collapsible-body'>
         <form class='col s12' action='/retgistrarInventario' method='post'>
-          <table class='striped highlight centered'>
+          <table id="downloadTable1" class='tablaInsertInv striped highlight centered'>
             <thead>
               <tr>
                 <th>Referencia</th>
@@ -76,6 +78,36 @@
                   </div>
                 </td>
               </tr>
+              <tr>
+                <td>HOJALDRE</td>
+                <td>
+                  <div class='input-field col s12 m6'>
+                    <input id='cantidadInvHojaldre' name='cantidadInvHojaldre' type='number' />
+                    <label for='cantidadInvHojaldre'>Cantidad</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class='center'>
+            <button type='submit' class='btnCss' id='' style='--clr:#e67e22'><span>Registrar</span><i></i></button>
+            {{! <button type='submit' id='btnRegistrarPizzas' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button> }}
+          </div>
+        </form>
+      </div>
+    </li>
+    <li>
+      <div class='collapsible-header'><i class='bx bx-book-content'></i>Invetario Pizza</div>
+      <div class='collapsible-body'>
+        <form class='col s12' action='/retgistrarInventario' method='post'>
+          <table id="downloadTable2" class='tablaInsertInv striped highlight centered'>
+            <thead>
+              <tr>
+                <th>Referencia</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
               <tr>
                 <td>PIZZA</td>
                 <td>
@@ -154,15 +186,6 @@
                   <div class='input-field col s12 m6'>
                     <input id='cantidadInvQ5' name='cantidadInvQ5' type='number' />
                     <label for='cantidadInvQ5'>Cantidad</label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>HOJALDRE</td>
-                <td>
-                  <div class='input-field col s12 m6'>
-                    <input id='cantidadInvHojaldre' name='cantidadInvHojaldre' type='number' />
-                    <label for='cantidadInvHojaldre'>Cantidad</label>
                   </div>
                 </td>
               </tr>
@@ -307,4 +330,5 @@
   </ul>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src='/js/registrarProduccionInv.js'></script>

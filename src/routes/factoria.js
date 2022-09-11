@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const db = require('../database');
 
-
 router.get('/listaUsuarios', async (req, res) => {
   const sqlSelect = `SELECT * FROM users`;
   let [resultSelect] = await db.promise().query(sqlSelect);
@@ -149,4 +148,34 @@ router.post('/retgistrarInventario', async (req, res) => {
   res.redirect('/resgistrarProduccionInv');
 });
 
+// ! Gerente
+router.get('/viewGerente', async (req, res) => {
+  let FechaHoy = new Date();
+  let FormatFechaHoy = FechaHoy.toISOString().split('T')[0];
+
+  const sqlSelect = `SELECT * FROM produccion WHERE DATE(PRO_Created_at) = ?`;
+  let [resultSelect] = await db.promise().query(sqlSelect, FormatFechaHoy);
+  let objProductos = {};
+  resultSelect.forEach((row) => {
+    if (row.PRO_RolUser === 'Produccion') {
+      if (objProductos[`${row.PRO_Referencia}Prod`]) {
+        let suma = (objProductos[`${row.PRO_Referencia}Prod`] += row.PRO_Cantidad);
+        objProductos[`${row.PRO_Referencia}Prod`] = suma;
+      } else {
+        objProductos[`${row.PRO_Referencia}Prod`] = row.PRO_Cantidad;
+      }
+    }
+    if (row.PRO_RolUser === 'Inventario') {
+      if (objProductos[`${row.PRO_Referencia}ProdInv`]) {
+        let suma = (objProductos[`${row.PRO_Referencia}ProdInv`] += row.PRO_Cantidad);
+        objProductos[`${row.PRO_Referencia}ProdInv`] = suma;
+      } else {
+        objProductos[`${row.PRO_Referencia}ProdInv`] = row.PRO_Cantidad;
+      }
+    }
+  });
+  console.log(objProductos);
+  // res.json({ objProductos });
+  res.render('factoria/viewGerente', { title: 'Vista Gerente', objProductos})
+});
 module.exports = router;

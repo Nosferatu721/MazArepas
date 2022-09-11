@@ -11,3 +11,7 @@ Handlebars.registerHelper("isAdminProduccion", (value) => {
 Handlebars.registerHelper("isAdminInventario", (value) => {
 	return value === "Admin" || value === "Inventario";
 });
+
+Handlebars.registerHelper("isNullOrUndefined", (value) => {
+	return value === undefined;
+});

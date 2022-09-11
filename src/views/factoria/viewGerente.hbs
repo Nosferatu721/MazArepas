@@ -1,0 +1,133 @@
+<div class='container container_inicio'>
+  <h3>Gerente</h3>
+
+  <hr />
+
+  <form class='col s12' action='/retgistrarInventario' method='post'>
+    <table id='downloadTable1' class='tablaInsertInv striped highlight centered'>
+      <thead>
+        <tr>
+          <th>Referencia</th>
+          <th>ENTRADA 1</th>
+          <th>ENTRADA 2</th>
+          <th>SALIDAS</th>
+          <th>SALDO INICIAL</th>
+          <th>SALDO INICIALFISICO</th>
+          <th>DIFERENCIA</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GRANDE</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.GrandeProd)}} 0 {{else}} {{objProductos.GrandeProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.GrandeProdInv)}} 0 {{else}} {{objProductos.GrandeProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>LARGE</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.LargeProd)}} 0 {{else}} {{objProductos.LargeProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.LargeProdInv)}} 0 {{else}} {{objProductos.LargeProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>MEDIANA</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MedianaProd)}} 0 {{else}} {{objProductos.MedianaProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MedianaProdInvif objProductos.MedianaProd)}} 0 {{else}} {{objProductos.MedianaProd}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>MEDIANA INT</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MedianaINTProd)}} 0 {{else}} {{objProductos.MedianaINTProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MedianaINTProdInv)}} 0 {{else}} {{objProductos.MedianaINTProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>POP</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PopProd)}} 0 {{else}} {{objProductos.PopProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PopProdInv)}} 0 {{else}} {{objProductos.PopProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>JUNIOR</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.JuniorProd)}} 0 {{else}} {{objProductos.JuniorProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.JuniorProdInv)}} 0 {{else}} {{objProductos.JuniorProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>PEQUEÑA</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PequeProd)}} 0 {{else}} {{objProductos.PequeProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PequeProdInv)}} 0 {{else}} {{objProductos.PequeProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>HOJALDRE</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.HojaldreProd)}} 0 {{else}} {{objProductos.HojaldreProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.HojaldreProdInv)}} 0 {{else}} {{objProductos.HojaldreProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>PIZZA</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PizzaProd)}} 0 {{else}} {{objProductos.PizzaProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PizzaProdInv)}} 0 {{else}} {{objProductos.PizzaProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>PIZZA INTEGRAL</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PizzaIntegralProd)}} 0 {{else}} {{objProductos.PizzaIntegralProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.PizzaIntegralProdInv)}} 0 {{else}} {{objProductos.PizzaIntegralProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>P2</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P2Prod)}} 0 {{else}} {{objProductos.P2Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P2ProdInv)}} 0 {{else}} {{objProductos.P2ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>P2INT</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P2INTProd)}} 0 {{else}} {{objProductos.P2INTProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P2INTProdInv)}} 0 {{else}} {{objProductos.P2INTProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>P5</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P5Prod)}} 0 {{else}} {{objProductos.P5Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.P5ProdInv)}} 0 {{else}} {{objProductos.P5ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>S2</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.S2Prod)}} 0 {{else}} {{objProductos.S2Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.S2ProdInv)}} 0 {{else}} {{objProductos.S2ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>S5</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.S5Prod)}} 0 {{else}} {{objProductos.S5Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.S5ProdInv)}} 0 {{else}} {{objProductos.S5ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Q2</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.Q2Prod)}} 0 {{else}} {{objProductos.Q2Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.Q2ProdInv)}} 0 {{else}} {{objProductos.Q2ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Q5</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.Q5Prod)}} 0 {{else}} {{objProductos.Q5Prod}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.Q5ProdInv)}} 0 {{else}} {{objProductos.Q5ProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>MG</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MGProd)}} 0 {{else}} {{objProductos.MGProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MGProdInv)}} 0 {{else}} {{objProductos.MGProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>MM</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MMProd)}} 0 {{else}} {{objProductos.MMProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MMProdInv)}} 0 {{else}} {{objProductos.MMProdInv}} {{/if}}</td>
+        </tr>
+        <tr>
+          <td>MP</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MPProd)}} 0 {{else}} {{objProductos.MPProd}} {{/if}}</td>
+          <td class="prod">{{#if (isNullOrUndefined objProductos.MPProdInv)}} 0 {{else}} {{objProductos.MPProdInv}} {{/if}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class='center'>
+      <button type='submit' class='btnCss' id='' style='--clr:#e67e22'><span>Registrar</span><i></i></button>
+      {{! <button type='submit' id='btnRegistrarPizzas' class='modal-close waves-effect waves-green btn'>Registrar <i class='bx bx-add-to-queue'></i></button> }}
+    </div>
+  </form>
+</div>
+{{!-- let ar = [...document.querySelectorAll('table tbody tr .prod')] --}}
+{{!-- for (let i = 0; i < ar.length; i+=2) {
+    if (ar[i].outerText !== ar[i+1].outerText) {
+        ar[i].style.color = 'red'
+        ar[i+1].style.color = 'red'
+    }…  --}}

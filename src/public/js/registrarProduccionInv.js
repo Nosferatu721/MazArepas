@@ -106,4 +106,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     containerTableFilter.innerHTML = htmlTR;
   });
+
+  // * Captura
+  const takeshot = () => {
+    let div = document.getElementById('downloadTable1');
+    let div2 = document.getElementById('downloadTable2');
+
+    // Use the html2canvas
+    // function to take a screenshot
+    // and append it
+    // to the output div
+    setTimeout(() => {
+      html2canvas(div).then(function (canvas) {
+        document.getElementById('output').appendChild(canvas);
+        console.log(canvas.toDataURL());
+        document.getElementById('aImg').href = canvas.toDataURL();
+      });
+      // html2canvas(div2).then(function (canvas) {
+      //   document.getElementById('output').appendChild(canvas);
+      // });
+    }, 5000);
+  };
+  takeshot();
 });
