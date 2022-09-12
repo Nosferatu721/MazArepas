@@ -292,3 +292,11 @@ thead {
 .tablaInsertInv tbody td {
   padding-bottom: 2px;
 }
+
+/* Gerente */
+
+.resaltar {
+  background-color: red;
+  font-weight: bold;
+  color: red;
+}

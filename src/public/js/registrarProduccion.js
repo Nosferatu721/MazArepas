@@ -1,30 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // * Validar Formularios
-  const referenciaEmpanadas = document.getElementById('referenciaEmpanadas'),
-    cantidadEmpanada = document.getElementById('cantidadEmpanada'),
-    btnRegistrarEmpanadas = document.getElementById('btnRegistrarEmpanadas'),
-    referenciaPizza = document.getElementById('referenciaPizza'),
-    cantidadPizza = document.getElementById('cantidadPizza'),
-    btnRegistrarPizzas = document.getElementById('btnRegistrarPizzas');
+  const referenciaEmpanadas = document.getElementById("referenciaEmpanadas"),
+    cantidadEmpanada = document.getElementById("cantidadEmpanada"),
+    btnRegistrarEmpanadas = document.getElementById("btnRegistrarEmpanadas"),
+    referenciaPizza = document.getElementById("referenciaPizza"),
+    cantidadPizza = document.getElementById("cantidadPizza"),
+    btnRegistrarPizzas = document.getElementById("btnRegistrarPizzas");
 
-  btnRegistrarEmpanadas.addEventListener('click', (e) => {
-    if (referenciaEmpanadas.value === '' || cantidadEmpanada.value === '') e.preventDefault();
-    if (referenciaEmpanadas.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Referencia 😑' });
-    if (cantidadEmpanada.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Cantidad 😑' });
+  btnRegistrarEmpanadas.addEventListener("click", (e) => {
+    if (referenciaEmpanadas.value === "" || cantidadEmpanada.value === "") e.preventDefault();
+    if (referenciaEmpanadas.value === "") return Toast.fire({ icon: "warning", title: "Por favor ingrese la Referencia 😑" });
+    if (cantidadEmpanada.value === "") return Toast.fire({ icon: "warning", title: "Por favor ingrese la Cantidad 😑" });
   });
-  btnRegistrarPizzas.addEventListener('click', (e) => {
-    if (referenciaPizza.value === '' || cantidadPizza.value === '') e.preventDefault();
-    if (referenciaPizza.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Referencia 😑' });
-    if (cantidadPizza.value === '') return Toast.fire({ icon: 'warning', title: 'Por favor ingrese la Cantidad 😑' });
+  btnRegistrarPizzas.addEventListener("click", (e) => {
+    if (referenciaPizza.value === "" || cantidadPizza.value === "") e.preventDefault();
+    if (referenciaPizza.value === "") return Toast.fire({ icon: "warning", title: "Por favor ingrese la Referencia 😑" });
+    if (cantidadPizza.value === "") return Toast.fire({ icon: "warning", title: "Por favor ingrese la Cantidad 😑" });
   });
 
   // * Mostrar Registros del dia de hoy
-  const tablaProduccionBody = document.querySelector('#tablaProduccion tbody'),
-    TotalRegistrosProduccion = document.getElementById('TotalRegistrosProduccion'),
-    TotalRegistrosProPizza = document.getElementById('TotalRegistrosProPizza');
-  getData('/registrosProduccionHoy').then((res) => {
+  const tablaProduccionBody = document.querySelector("#tablaProduccion tbody"),
+    TotalRegistrosProduccion = document.getElementById("TotalRegistrosProduccion"),
+    TotalRegistrosProPizza = document.getElementById("TotalRegistrosProPizza");
+  getData("/registrosProduccionHoy").then((res) => {
     let objProductos = {},
-      htmlTR = '',
+      htmlTR = "",
       sumaTotal = 0,
       sumaPizza = 0;
     res.forEach((producto) => {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let claves = Object.keys(objProductos);
     for (let i = 0; i < claves.length; i++) {
-      claves[i] !== 'Pizza' ? (sumaTotal += objProductos[claves[i]]) : (sumaPizza += objProductos[claves[i]]);
+      claves[i] !== "Pizza" ? (sumaTotal += objProductos[claves[i]]) : (sumaPizza += objProductos[claves[i]]);
       htmlTR += `
           <tr>
             <td>${claves[i]}</td>
@@ -54,15 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // * Filtro
-  const containerTableFilter = document.getElementById('containerTableFilter'),
-    btnFiltro = document.getElementById('btnFiltro'),
-    fechaInput = document.getElementById('fechaInput');
-  btnFiltro.addEventListener('click', async () => {
-    let res = await postData('/getForDateProduccion', { fecha: fechaInput.value });
+  const containerTableFilter = document.getElementById("containerTableFilter"),
+    btnFiltro = document.getElementById("btnFiltro"),
+    fechaInput = document.getElementById("fechaInput");
+  btnFiltro.addEventListener("click", async () => {
+    containerTableFilter.innerHTML = "";
+    let res = await postData("/getForDateProduccion", { fecha: fechaInput.value });
     if (res.length === 0) {
       Toast.fire({
-        icon: 'info',
-        title: 'No hay registros en esta fecha 😢',
+        icon: "info",
+        title: "No hay registros en esta fecha 😢",
       });
       return;
     }
